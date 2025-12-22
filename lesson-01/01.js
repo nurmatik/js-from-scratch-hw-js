@@ -5,7 +5,8 @@
 let sum = 0;
 while(sum <= 20){
 	sum ++;
+	console.log(sum);
 }
 
-console.log(sum);
+
 
