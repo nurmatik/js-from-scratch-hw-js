@@ -3,6 +3,8 @@
 
 // your code
 let sum = 0;
-while(sum < 20){
-	sum++;
+let i = 1;
+while(i < 20){
+	sum += i;
+	i++;
 }
