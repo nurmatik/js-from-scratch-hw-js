@@ -2,7 +2,7 @@
 // Результат присвойте переменной sum
 
 // your code
-let sum = 1;
+let sum = 0;
 while(sum <= 20){
-	sum++
+	sum++;
 }
