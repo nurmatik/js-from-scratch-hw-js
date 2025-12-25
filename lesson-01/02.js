@@ -6,7 +6,7 @@
 */
 
 // your code
-let factorial = 1;
+let factorial = 10;
 i = 1;
 while (i <= 10) {
   factorial = factorial * i;
