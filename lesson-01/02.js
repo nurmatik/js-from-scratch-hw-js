@@ -7,10 +7,9 @@
 
 // your code
 let factorial = 10;
-i = 1;
+let i = 1;
 while (i <= 10) {
-  factorial = factorial * i;
-  console.log(i);
-  i = i - 1;
+
+  i++;
 }
-// console.log(i);
+console.log(i);
