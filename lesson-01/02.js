@@ -7,8 +7,9 @@
 
 // your code
 let factorial = 10;
+
 let i = 1;
-while (i <= 10) {
+while (i <= factorial) {
 
   i++;
 }
