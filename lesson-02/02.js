@@ -9,7 +9,7 @@
 
 let dice1 = Math.floor(Math.random() * 6) + 1;   // your code
 let dice2 = Math.floor(Math.random() * 6) + 1;   // your code
-let isWinningDouble = false;  // your code
+let isWinningDouble = true;  // your code
 
 
 
