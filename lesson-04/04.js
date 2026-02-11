@@ -13,7 +13,8 @@
 */
 
 function doubleEachCharacter(str) {
-	return str + str;
+	return str.split('').map(char => char + char).join('');
 }
 
 console.log(doubleEachCharacter('hello'));
+
