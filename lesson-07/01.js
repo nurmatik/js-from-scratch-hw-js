@@ -21,32 +21,33 @@ const WEB_TECH_IMAGES = [
 let currentIndex = 0;
 
 
-const sliderImg = document.getElementById('web-tech-image');
-const btnPrev = document.getElementById('prev-button');
-const btnNext = document.getElementById('next-button'); 
+document.addEventListener('DOMContentLoaded', function() {
+  const sliderImg = document.getElementById('web-tech-image');
+  const btnPrev = document.getElementById('prev-button');
+  const btnNext = document.getElementById('next-button');
 
-
-btnNext.addEventListener('click', function() {
-  currentIndex = currentIndex + 1;
-  
  
-  if (currentIndex >= WEB_TECH_IMAGES.length) {
-    currentIndex = 0;
-  }
-  
- 
-  sliderImage.src = WEB_TECH_IMAGES[currentIndex];
-});
+  if (!sliderImg || !btnPrev || !btnNext) return;
 
+  
+  btnNext.addEventListener('click', function() {
+    currentIndex = currentIndex + 1;
+    
+    if (currentIndex >= WEB_TECH_IMAGES.length) {
+      currentIndex = 0;
+    }
+    
+    sliderImg.src = WEB_TECH_IMAGES[currentIndex];
+  });
 
-prevButton.addEventListener('click', function() {
-  currentIndex = currentIndex - 1; 
   
-  
-  if (currentIndex < 0) {
-    currentIndex = WEB_TECH_IMAGES.length - 1;
-  }
-  
-  
-  sliderImage.src = WEB_TECH_IMAGES[currentIndex];
+  btnPrev.addEventListener('click', function() {
+    currentIndex = currentIndex - 1;
+    
+    if (currentIndex < 0) {
+      currentIndex = WEB_TECH_IMAGES.length - 1;
+    }
+    
+    sliderImg.src = WEB_TECH_IMAGES[currentIndex];
+  });
 });
