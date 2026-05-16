@@ -21,13 +21,13 @@ const WEB_TECH_IMAGES = [
 let currentIndex = 0;
 
 
-const sliderImage = document.querySelector('.lesson-6 img'); 
-const prevButton = document.querySelector('.lesson-6 .prev'); 
-const nextButton = document.querySelector('.lesson-6 .next'); 
+const sliderImg = document.getElementById('web-tech-image');
+const btnPrev = document.getElementById('prev-button');
+const btnNext = document.getElementById('next-button'); 
 
 
-nextButton.addEventListener('click', function() {
-  currentIndex = currentIndex + 1; 
+btnNext.addEventListener('click', function() {
+  currentIndex = currentIndex + 1;
   
  
   if (currentIndex >= WEB_TECH_IMAGES.length) {
