@@ -21,28 +21,32 @@ const WEB_TECH_IMAGES = [
 let currentIndex = 0;
 
 
-const imageElement = document.querySelector('.lesson-6 img');  
+const sliderImage = document.querySelector('.lesson-6 img'); 
 const prevButton = document.querySelector('.lesson-6 .prev'); 
 const nextButton = document.querySelector('.lesson-6 .next'); 
 
 
-function updateImage() {
-  imageElement.src = WEB_TECH_IMAGES[currentIndex];
-}
-
-
-nextButton.addEventListener('click', () => {
+nextButton.addEventListener('click', function() {
+  currentIndex = currentIndex + 1; 
+  
  
-  currentIndex = (currentIndex + 1) % WEB_TECH_IMAGES.length;
-  updateImage();
+  if (currentIndex >= WEB_TECH_IMAGES.length) {
+    currentIndex = 0;
+  }
+  
+ 
+  sliderImage.src = WEB_TECH_IMAGES[currentIndex];
 });
 
 
-prevButton.addEventListener('click', () => {
- 
-  currentIndex = (currentIndex - 1 + WEB_TECH_IMAGES.length) % WEB_TECH_IMAGES.length;
-  updateImage();
+prevButton.addEventListener('click', function() {
+  currentIndex = currentIndex - 1; 
+  
+  
+  if (currentIndex < 0) {
+    currentIndex = WEB_TECH_IMAGES.length - 1;
+  }
+  
+  
+  sliderImage.src = WEB_TECH_IMAGES[currentIndex];
 });
-
-
-updateImage();
