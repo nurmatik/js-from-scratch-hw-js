@@ -17,3 +17,34 @@ const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/c8a1f4a6-1337-4899-bdfd-a8c9c7bb806a_css-magic-logo.jpg',
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
 ]
+
+const img = document.querySelector('.lesson-6 img')
+const prevBtn = document.querySelector('.lesson-6 .prev')
+const nextBtn = document.querySelector('.lesson-6 .next')
+
+let index = 0
+
+nextBtn.addEventListener('click', () => {
+  index = index + 1
+
+ 
+  if (index === WEB_TECH_IMAGES.length) {
+    index = 0
+  }
+
+  
+  img.src = WEB_TECH_IMAGES[index]
+})
+
+
+prevBtn.addEventListener('click', () => {
+  index = index - 1
+
+  
+  if (index < 0) {
+    index = WEB_TECH_IMAGES.length - 1
+  }
+
+ 
+  img.src = WEB_TECH_IMAGES[index]
+})
