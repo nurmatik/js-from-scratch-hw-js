@@ -32,12 +32,32 @@ const countdownDisplay = document.getElementById('countdown')
 let isTimerStarted = false
 let timerId
 
-startButton.addEventListener('click', () => {
-  let counter = 3
 
-  // your code
+startButton.addEventListener('click', function() {
+  if (isTimerStarted === true) {
+    return;
+  }
+
+  isTimerStarted = true;
+  let counter = 3;
+  countdownDisplay.textContent = counter;
+  timerId = setInterval(function() {
+    counter = counter - 1; 
+
+    if (counter === 0) {
+      countdownDisplay.textContent = "🚀"; 
+      clearInterval(timerId); 
+      isTimerStarted = false; 
+    } else {
+      countdownDisplay.textContent = counter;
+    }
+  }, 1000);
 })
 
-cancelButton.addEventListener('click', () => {
-  // your code
+cancelButton.addEventListener('click', function() {
+  if (isTimerStarted === true) {
+    clearInterval(timerId);  
+    countdownDisplay.textContent = "Отменено"; 
+    isTimerStarted = false; 
+  }
 })
