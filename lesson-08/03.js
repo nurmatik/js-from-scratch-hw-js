@@ -10,5 +10,14 @@
 */
 
 function truncate(str, maxLength) {
-  // your code
+  let stringLength = str.length;
+  if (stringLength > maxLength) {
+    let cutString = str.slice(0, maxLength);
+    return cutString + "...";
+  } else {
+    return str;
+  }
 }
+
+console.log(truncate("Вот, что мне действительно нравится в этом", 20)); 
+console.log(truncate("Короткая строка", 20)); 
