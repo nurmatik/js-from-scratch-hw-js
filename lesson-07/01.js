@@ -20,33 +20,29 @@ const WEB_TECH_IMAGES = [
 
 let currentIndex = 0;
 
-// Находим элементы на странице (поменяй селекторы, если в index.html другие классы или id)
-const sliderImg = document.querySelector('.lesson-6 img');
-const btnPrev = document.querySelector('.lesson-6 .prev');
-const btnNext = document.querySelector('.lesson-6 .next');
+
+const imageElement = document.querySelector('.lesson-6 img');  
+const prevButton = document.querySelector('.lesson-6 .prev'); 
+const nextButton = document.querySelector('.lesson-6 .next'); 
 
 
-btnNext.addEventListener('click', function() {
-  currentIndex = currentIndex + 1; // увеличиваем индекс на 1
-  
-  
-  if (currentIndex >= WEB_TECH_IMAGES.length) {
-    currentIndex = 0;
-  }
-  
-
-  sliderImg.src = WEB_TECH_IMAGES[currentIndex];
-});
+function updateImage() {
+  imageElement.src = WEB_TECH_IMAGES[currentIndex];
+}
 
 
-btnPrev.addEventListener('click', function() {
-  currentIndex = currentIndex - 1;
-  
-  
-  if (currentIndex < 0) {
-    currentIndex = WEB_TECH_IMAGES.length - 1;
-  }
-  
+nextButton.addEventListener('click', () => {
  
-  sliderImg.src = WEB_TECH_IMAGES[currentIndex];
+  currentIndex = (currentIndex + 1) % WEB_TECH_IMAGES.length;
+  updateImage();
 });
+
+
+prevButton.addEventListener('click', () => {
+ 
+  currentIndex = (currentIndex - 1 + WEB_TECH_IMAGES.length) % WEB_TECH_IMAGES.length;
+  updateImage();
+});
+
+
+updateImage();
